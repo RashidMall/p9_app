@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Article Recommendations</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">My Content | Article recommendation </h1>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form action="recommendations" method="POST">
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="user_id" name="user_id" min="0" max="322896" placeholder="Select user ID (0 -- 322 896)">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Get recommendations</button>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="mt-4">
+            <h2 class="text-center">Here are 5 recommended article IDs</h2>
+            {% if recommendations %}
+            <div class="alert alert-info" role="alert">
+                {% for article in recommendations.split(', ') %}
+                <p class="text-center">{{ article }}</p>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="alert alert-warning" role="alert">
+                No recommendations available.
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Link to Bootstrap JS and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
