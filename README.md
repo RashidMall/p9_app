@@ -1,7 +1,7 @@
 # Article Recommendation Web App
 
 This is a simple Flask-based web application for receiving article recommendations for users. The application interacts with a remote API server that provides personalized article recommendations based on user IDs.
-
+https://openclassrooms-p9-app-6b76a5f33f7a.herokuapp.com/
 ## Usage
 1. Make sure you have Python and Flask installed on your system.
 
